@@ -1,0 +1,27 @@
+version: "3.3"
+services:
+
+  api:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        INSTALL_DEV: false
+    ports:
+      - 8000:8000
+
+    ## To deploy in production with https://github.com/nginx-proxy/nginx-proxy
+    # environment:
+    #   - VIRTUAL_HOST={{cookiecutter.host_url.replace('http://', '').replace('https://', '')}}
+    #   - LETSENCRYPT_HOST={{cookiecutter.host_url.replace('http://', '').replace('https://', '')}}
+    #   - VIRTUAL_PORT=8000
+
+    ## If need to pass secrets to the API:
+    # env_file:
+    #   - secrets.env
+
+    ## In case you want to develop in docker:
+    # volumes:
+    #   - ./metrics:/app/metrics
+    # command: /start-reload.sh

@@ -1,0 +1,13 @@
+{
+    "package_name": "my-fair-test",
+    "package_name_stylized": "{{ cookiecutter.package_name.replace('-', ' ').capitalize() }}",
+    "description": "Implementation of FAIR metrics tests",
+    "github_organization_name": "your-org-or-username",
+    "git_repository_url": "https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}",
+    "author_name": "Firstname Lastname",
+    "author_email": "email@example.com",
+    "author_orcid": "https://orcid.org/0000-0000-0000-0000",
+    "author_affiliation": "Institute of Data Science at Maastricht University",
+    "host_url": "https://metrics.api.fair-enough.semanticscience.org",
+    "persistent_url": "https://w3id.org/fair-enough/metrics"
+}
