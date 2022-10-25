@@ -37,7 +37,39 @@ git clone {{cookiecutter.git_repository_url}}
 cd {{cookiecutter.package_name}}
 ```
 
-### 📥️ Install dependencies
+### 🐳 With docker
+
+To deploy the API in development, with automatic reload when the code changes run this command:
+
+```bash
+docker-compose up dev
+```
+
+Access the OpenAPI Swagger UI on http://localhost:8000
+
+If you make changes to the dependencies in `pyproject.toml` you will need to rebuild the image to install the new requirements:
+
+```bash
+docker-compose up dev --build
+```
+
+Run the **tests**:
+
+```bash
+docker-compose run test
+# You can pass args:
+docker-compose run test pytest -s
+```
+
+Run in **production** (change the docker-compose.yml to your deployment solution):
+
+```bash
+docker-compose up prod -d
+```
+
+### 🐍 Without docker
+
+#### 📥️ Install dependencies
 
 Create and activate a virtual environment if necessary:
 
@@ -52,7 +84,7 @@ Install dependencies from the source code:
 pip install -e ".[test,dev]"
 ```
 
-### 🐍 Deploy the API in development
+#### Deploy the API in development
 
 Start the API locally on http://localhost:8000
 
@@ -62,7 +94,7 @@ uvicorn main:app --reload
 
 > The API will automatically reload on changes to the code 🔄
 
-### ✔️ Test the Metrics Tests API
+#### ✔️ Test the Metrics Tests API
 
 The tests are run automatically by a GitHub Action workflow at every push to the `main` branch.
 
@@ -80,22 +112,6 @@ Run the tests only for a specific metric test:
 
 ```bash
 pytest -s --metric a1-metadata-protocol
-```
-
-### 🐳 Deploy with docker
-
-From the root of the cloned repository, run the command below, and access the OpenAPI Swagger UI on http://localhost:8000
-
-```bash
-docker-compose up
-```
-
-> You can use a reverse [nginx-proxy](https://github.com/nginx-proxy/nginx-proxy) for docker to route the services, or any other solution you want.
-
-If you make changes to the dependencies in `pyproject.toml` you will need to rebuild the image to install the new requirements:
-
-```bash
-docker-compose up --build
 ```
 
 

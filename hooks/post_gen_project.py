@@ -14,4 +14,4 @@ print("\n🚀 To start the API with docker, run:")
 print(f"cd {repo_folder}")
 print("docker-compose up")
 
-print("\n🗒️  Or check the README.md for more details on the development workflow")
+print("\n🗒️  And check the README.md for more details on the development workflow")

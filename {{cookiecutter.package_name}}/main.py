@@ -1,5 +1,6 @@
 from fair_test import FairTestAPI
 
+
 app = FairTestAPI(
     title='{{cookiecutter.package_name_stylized}}',
     metrics_folder_path='metrics',

@@ -1,4 +1,4 @@
-# Cookiecutter fair-test
+# 🍪 Cookiecutter fair-test
 
 A [cookiecutter](https://github.com/cookiecutter/cookiecutter) for making new `fair-test` API repositories.
 

@@ -40,3 +40,8 @@ Homepage = "{{cookiecutter.git_repository_url}}"
 History = "{{cookiecutter.git_repository_url}}/releases"
 Tracker = "{{cookiecutter.git_repository_url}}/issues"
 Source = "{{cookiecutter.git_repository_url}}"
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
